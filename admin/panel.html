@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Panel Capital Flow">
+  <meta name="keywords" content="Panel">
+  <meta name="author" content="Cemarketing">
+  <title>Panel Capital Flow</title>
+  <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="css/panel.css">
+</head>
+
+<body>
+  <div id="app">
+
+    <nav class="navbar navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="assets/logocf.png" alt="" width="70" height="100">
+        </a>
+        <div class="d-flex">
+          <button class="btn btn-outline-light btn-sm" type="button" @click="close_session"><i class="fas fa-sign-out"></i> Cerrar Sesión</button>
+        </div>
+      </div>
+    </nav>
+    
+    <section>
+      <div class="container">
+        <div class="input-group mb-3 mt-5">
+          <input type="text" class="form-control" v-model="search" placeholder="Buscar">
+        </div>
+  
+        <div class="row mb-5">
+          <div class="col-sm-12 col-md-2 col-lg-3 col-offset-top position-relative mt-3" v-for="item in filteredItems">
+            <div class="card">
+              <img :src="'https://capitalflowconsulting.com/uploads/' + item.imagen" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">SKU: {{item.sku}}</h5>
+                <h5 class="card-title">Tipo: {{item.tipo}}</h5>
+                <p class="card-text">Precio: ${{ formatPrice(item.precio)}}</p>
+                <p class="card-text">Ubicacion: {{item.ubicacion}}</p>
+                <p class="card-text">Dirección: {{item.direccion}}</p>
+                <p class="card-text">Youtube: {{item.youtube}}</p>
+                <p class="card-text">Tags: {{item.tags}}</p>
+                <p class="card-text">SubCategoria: {{item.subcategoria}}</p>
+                <p class="card-text pb-2">Categoria: {{item.categoria}} </p>
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal3" @click="data_modal_edit(item)"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-danger float-end" data-bs-toggle="modal" data-bs-target="#exampleModal2" @click="data_modal(item)"><i class="fas fa-trash-alt"></i></button>
+              </div>
+            </div>
+          </div>
+          <h4 class="text-center" v-if="! filteredItems.length">No se encontro ningun resultado.</h4>
+      </div>
+    </section>
+
+    <div class="position-absolute bottom-0 end-0 float-marg">
+      <button type="button" class="btn btn-success btn-circle" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus"></i>
+      </button>
+    </div>
+  
+
+
+  <!-- ADD MODAL -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">AGREGAR INVERSIÓN O INMUEBLE.</h5>
+      </div>
+      <div class="modal-body">
+        <form @submit.prevent="add">
+          <div class="mb-2">
+            <input type="text" class="form-control" placeholder="Tipo" v-model="tipo" required>
+            <div class="form-text">Ej. Venta o Renta</div>
+          </div>
+          <div class="mb-2">
+            <input type="number" class="form-control" placeholder="Precio" v-model="precio" required>
+            <div class="form-text">Ej. 20000</div>
+          </div>
+          <div class="mb-2">
+            <input type="text" class="form-control" placeholder="Ubicación" v-model="ubicacion" required>
+            <div class="form-text">Ej. https://goo.gl/maps/iSy2enuvitV1E4mPA</div>
+          </div>
+          <div class="mb-2">
+            <input type="text" class="form-control" placeholder="Dirección" v-model="direccion" required>
+            <div class="form-text">Ej. Zapopan, Jalisco</div>
+          </div>
+          <div class="mb-2">
+            <input type="text" class="form-control" placeholder="Youtube" v-model="youtube">
+            <div class="form-text">Ej. https://www.youtube.com/watch?v=9wt2rXDtrTU</div>
+          </div>
+          <div class="mb-2">
+            <input type="text" class="form-control" placeholder="Tags" v-model="tags" required>
+            <div class="form-text">Ej. casa, playa, venta, dos pisos, jalisco</div>
+          </div>
+          <div class="mb-2">
+          <select class="form-select" v-model="selectedCat" @change="select" required>
+            <option disabled value="">Selecciona una Categoría</option>
+            <option>Inversiones</option>
+            <option>Inmuebles</option>
+          </select>
+        </div>
+          <div class="mb-2" v-if="sInv">
+            <select class="form-select" v-model="selectedSub" @change="selectSub" required>
+              <option disabled value="">Selecciona Sub-Categoría Inversiones</option>
+              <option>Playa</option>
+              <option>Ciudad</option>
+              <option>Terreno</option>
+              <option>Plaza Comercial</option>
+              <option>Proyectos Mixtos</option>
+              <option>Inversión</option>
+              <option>Desarrollos industriales</option>
+            </select>
+          </div>
+          <div class="mb-2" v-if="sInm">
+            <select class="form-select" v-model="selectedSub" @change="selectSub" required>
+              <option disabled value="">Selecciona Sub-Categoría Inmuebles</option>
+              <option>Casas</option>
+              <option>Terreno</option>
+              <option>Bienes Adjudicados</option>
+              <option>Departamentos</option>
+              <option>Inversión</option>
+              <option>Desarrollo Industrial</option>
+              <option>Bodegas</option>
+              <option>Local Comercial</option>
+              <option>Plaza Comercial</option>
+              <option>Edificios</option>
+              <option>Oficinas</option>
+              <option>Hoteles</option>
+            </select>
+          </div>
+
+          <div class="mb-2" v-if="selectedSub !== ''">
+
+            <div class="row">
+              <div class="col-sm-12 col-md-4 col-lg-4 mb-2">
+                <input type="text" class="form-control" :placeholder="[[ labelA ]]" v-model="infoA">
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4 mb-2">
+                <input type="text" class="form-control" :placeholder="[[ labelB ]]" v-model="infoB">
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4 mb-2">
+                <input type="text" class="form-control" :placeholder="[[ labelC ]]" v-model="infoC">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="input-group mb-2">
+            <label class="input-group-text">Imagen</label>
+            <input type="file" class="form-control" @change="fileImg" name="image" ref="image" accept="image/*" required>
+          </div>
+          <div class="input-group mb-2">
+            <label class="input-group-text">PDF</label>
+            <input type="file" class="form-control" @change="filePdf" name="pdf" ref="pdf" accept="application/pdf" required>
+          </div>
+          <div class="input-group mb-2">
+            <button class="btn btn-primary w-b btn-success">Agregar</button>
+          </div>
+        </form>
+          <div class="alert alert-success alert-dismissible fade show text-center" v-if="success">
+            <strong>Exito!</strong> Se ha agregado correctamente.
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END ADD MODAL -->
+
+
+<!-- DELETE MODAL -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Eliminar elemento.</h5>
+      </div>
+      <div class="modal-body">
+      <p>¿Está seguro de que desea eliminar este elemento de forma permante? Sku: {{modal_data.sku}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger btn-sm" @click="delete_item(modal_data.id)">Borrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END DELETE MODAL -->
+
+<!-- EDIT MODAL -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar elemento.</h5>
+      </div>
+      <div class="modal-body">
+        <div class="btn-group d-grid gap-2 col-6 mx-auto mb-3" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-primary" @click="show_form">Datos</button>
+          <button type="button" class="btn btn-primary" @click="show_files">Imagen & PDF</button>
+        </div>
+        <form @submit.prevent="edit_form(modal_data_edit)" v-if="form_show">
+          <div class="mb-2">
+            <div class="form-text">Ej. Venta o Renta</div>
+            <input type="text" class="form-control" placeholder="Tipo" v-model="e_tipo" required>
+          </div>
+          <div class="mb-2">
+            <div class="form-text">Precio</div>
+            <input type="number" class="form-control" placeholder="Precio" v-model="e_precio" required>
+          </div>
+          <div class="mb-2">
+            <div class="form-text">Ubicación</div>
+            <input type="text" class="form-control" placeholder="Ubicación" v-model="e_ubicacion" required>
+          </div>
+          <div class="mb-2">
+            <div class="form-text">Dirección</div>
+            <input type="text" class="form-control" placeholder="Dirección" v-model="e_direccion" required>
+          </div>
+          <div class="mb-2">
+            <div class="form-text">https://www.youtube.com/watch?v=9wt2rXDtrTU</div>
+            <input type="text" class="form-control" placeholder="Youtube" v-model="e_youtube">
+          </div>
+          <div class="mb-2">
+            <div class="form-text">Tags</div>
+            <input type="text" class="form-control" placeholder="Tags" v-model="e_tags" required>
+          </div>
+          <div class="mb-2">
+            <div class="form-text">Categoria</div>
+          <select class="form-select" v-model="e_selectedCat" @change="e_select" required>
+            <option disabled value="">Selecciona una Categoría</option>
+            <option>Inversiones</option>
+            <option>Inmuebles</option>
+          </select>
+        </div>
+          <div class="mb-2" v-if="e_sInv">
+            <div class="form-text">SubCategoria</div>
+            <select class="form-select" v-model="e_selectedSub" @change="e_selectSub"required>
+              <option disabled value="">Selecciona Sub-Categoría Inversiones</option>
+              <option>Playa</option>
+              <option>Ciudad</option>
+              <option>Terreno</option>
+              <option>Plaza Comercial</option>
+              <option>Proyectos Mixtos</option>
+              <option>Inversión</option>
+              <option>Desarrollos industriales</option>
+            </select>
+          </div>
+          <div class="mb-2" v-if="e_sInm">
+            <select class="form-select" v-model="e_selectedSub" @change="e_selectSub" required>
+              <option disabled value="">Selecciona Sub-Categoría Inmuebles</option>
+              <option>Casas</option>
+              <option>Terreno</option>
+              <option>Bienes Adjudicados</option>
+              <option>Departamentos</option>
+              <option>Inversión</option>
+              <option>Desarrollo Industrial</option>
+              <option>Bodegas</option>
+              <option>Local Comercial</option>
+              <option>Plaza Comercial</option>
+              <option>Edificios</option>
+              <option>Oficinas</option>
+              <option>Hoteles</option>
+            </select>
+            <div class="form-text">SubCategoria</div>
+          </div>
+
+          <div class="mb-2" v-if="e_selectedSub !== ''">
+
+            <div class="row">
+              <div class="col-sm-12 col-md-4 col-lg-4 mb-2">
+                <input type="text" class="form-control" :placeholder="[[ labelA ]]" v-model="infoA">
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4 mb-2">
+                <input type="text" class="form-control" :placeholder="[[ labelB ]]" v-model="infoB">
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4 mb-2">
+                <input type="text" class="form-control" :placeholder="[[ labelC ]]" v-model="infoC">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="input-group mb-2">
+            <button class="btn btn-primary w-b btn-success">Editar</button>
+          </div>
+        </form>
+
+      <form @submit.prevent="edit_files(modal_data_edit)" v-if="files_show">
+        <div class="input-group mb-3 mt-5">
+          <label class="input-group-text">Imagen</label>
+          <input type="file" class="form-control" @change="e_fileImg" name="e_image" ref="e_image" accept="image/*" required>
+        </div>
+        <div class="input-group mb-3">
+          <label class="input-group-text">PDF</label>
+          <input type="file" class="form-control" @change="e_filePdf" name="e_pdf" ref="e_pdf" accept="application/pdf" required>
+        </div>
+        <div class="input-group mb-3">
+          <button class="btn btn-primary w-b btn-success">Editar</button>
+        </div>
+      </form>
+
+      <div class="alert alert-success alert-dismissible fade show text-center" v-if="e_success">
+        <strong>Exito!</strong> Se ha editado correctamente.
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END EDIT MODAL -->
+
+
+</div>
+</body>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="js/panel.js"></script>
+</body>
+
+</html>

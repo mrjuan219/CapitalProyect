@@ -1,0 +1,970 @@
+
+
+
+.textboxcontac2{
+    background: white;
+    width: 72%;
+    border: 1px solid #fff;
+        border-left-color: rgb(255, 255, 255);
+        border-left-style: solid;
+        border-left-width: 1px;
+    border-left: 0px;
+    color: #000;
+    height: 35px;
+    font-size: 1.7rem;
+    padding-left: 2rem;
+    font-family: arial;
+}
+.titulosinput{
+
+    color: #fff;
+    font-size: 23pt;
+    padding-bottom: 10px;
+    font-family: impact;
+	padding-top: 30px;
+
+}
+.inicioterr {
+    background: none;
+    color: #191919;
+    border: 2px solid #191919;
+    width: 227px;
+    font-size: 15pt;
+    padding: 5px;
+    margin-top: 25px;
+    background: #fff;
+}
+
+.inicioterr:hover {
+
+    background: #fff;
+    color: #191919;
+	cursor: pointer;
+
+}
+.inciiodesecion {
+
+    background: none;
+    color: #fff;
+    border: 2px solid #fff;
+    width: 30%;
+    font-size: 15pt;
+    padding: 5px;
+    margin-top: 25px;
+
+}
+
+.inciiodesecion:hover {
+
+    background: #fff;
+    color: #191919;
+	cursor: pointer;
+
+}
+
+
+
+
+.divcontenedordecategorias {
+    width: 90%;
+    padding: 2%;
+    background: #DDDDDD;
+    text-align: center;
+    border: 2px solid;
+	margin-top: 20px;
+}
+.recuadroinercategoria {
+    width: 45%;
+    padding: 1%;
+    display: inline-block;
+    border: 2px solid #000;
+	background: #FFFFFF;
+	margin: 1%;
+	font-size: 15pt;
+}
+#sortable { 
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    width: 90%; 
+  }
+#sortable li { 
+    margin: 3px 3px 3px 0; 
+    padding: 1px; 
+    float: left; 
+    border: 0;
+    background: none;
+	  position: relative;
+	  width: 32%;
+	  height: 200px;
+	padding-bottom: 25px;
+	padding-top: 20px;
+  }
+.imgpanel{
+    height: 200px;
+	  width: auto;
+	  max-width: 100%;
+	  max-height: 200px;
+    
+  }
+.eliminarimg{
+position: absolute;
+width: 50px;
+top: -15px;
+right: 5px;
+}
+.divtitusoagregar {
+    font-size: 30px;
+    text-align: center;
+    font-family: titulos;
+}
+.instruccionesdes{
+	
+    font-size: 16px;
+    color: 
+    #2B2B2B;
+    font-family: titulos;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.divformacionmoradohome{
+	border: 2px solid
+#121212;
+padding: 20px;
+width: 60%;
+margin: 30px;
+	cursor: pointer;
+}
+.fondosiniciopanel{
+	background-color: #cccccc;
+height: 200px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+	width: 80%;
+}
+.recuadronegtrofirmacion {
+
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    height: 200px;
+    font-size: 45pt;
+    font-family: impact;
+    display: flex;
+    align-items: center;
+
+}
+.formaicondepedisoformacin {
+    background: 
+    #fff;
+    width: 40%;
+    padding: 20px;
+    text-align: center;
+    font-family: titulos;
+    top: 20%;
+    position: absolute;
+    left: 30%;
+}
+.maintitulospedidso{
+	font-size: 25px;
+padding-bottom: 15px;
+padding-top: 15px;
+	font-family: titulos;
+color:#000;
+}
+.textosdeordenesformato {	
+	font-family: titulos;
+font-size: 20px;
+color:
+#000;
+border-radius: 10px;
+width: 50%;
+cursor: pointer;
+padding: 5px;
+}
+.selectoorderfor {
+	background: rgba(243, 243, 243, 0.8);
+}
+.textosdeordenesformato:hover{
+	background: rgba(243, 243, 243, 0.8);
+	
+}
+.tdtitlomodifpanelfrmacion{
+	background:#121212;
+color:#fff;
+font-family: titulos;
+font-size: 16px;
+padding: 10px;
+text-align: center;
+}
+.textodeordenes{
+	font-family: titulos;
+	font-size: 30px;
+	padding-bottom: 5px;
+	color: #464646;
+}
+.barralateraldemayan{
+	float: left;
+	width: 20%;
+	height: 100vh;
+	box-shadow: 9px 11px 36px -14px rgba(0,0,0,0.27);
+	background: #121212;
+	position: fixed;
+}
+.espacioparamodificacione{
+	float: right;
+	width: 79%;
+	padding-bottom: 100px;
+}
+.imagendepersil{
+	width: 100px;
+	height: 100px;
+	border-radius: 70px;
+	margin-top: 50px;
+	margin-bottom: 15px;
+}
+.textotitulosnombre{
+	font-family: titulos;
+font-size: 20px;
+	padding-bottom: 5px;
+	color: #fff;
+}
+.textotitulosnombre{
+	font-family: titulos;
+font-size: 16px;
+	padding-bottom: 5px;
+	color: #fff;
+}
+.tabladeovermenuforma{
+	width: 100%;
+	cursor: pointer;
+	padding-top: 15px;
+	padding-bottom: 10px;
+}
+.tabladeovermenuforma:hover{
+	background: #424242;
+}
+.tabladeovermenuformaoverpor{
+	background: #424242;
+	cursor: pointer;
+	padding-top: 15px;
+	padding-bottom: 10px;
+}
+.texttostitulosproductos{
+	font-family: titulos;
+font-size: 45px;
+padding-bottom: 5px;
+color: #000;
+text-align: center;
+padding-top: 20px;
+}
+.botonparaagregar{
+	width: 200px;
+	padding: 10px;
+	border: 2px #000 solid;
+	border-radius: 5px;
+	cursor: pointer;
+	display: inline-block;
+	margin-top: 15px;
+	margin-left: 30px;
+}
+.botonparaagregar:hover{
+	color:#ff2f3d;
+border: 2px solid #ff2f3d;
+}
+.imgaddformacion{
+	width: 70%;
+}
+.agregaraddproductos{
+	font-family: titulos;
+font-size: 20px;
+}
+#galeriadefotosmain{
+	padding-top: 50px;
+}
+#divvertamycolorflotante{
+	position: absolute;
+    top: 25px;
+    height: auto;
+    width: 70%;
+    overflow: visible;
+    background: #fff;
+    box-shadow: 10px 10px 35px -4px rgba(0, 0, 0, 0.21);
+    padding: 40px;
+	padding-top: 0px;
+left: 22%;
+}
+#divflotanteparaagregarproducto{
+    position: absolute;
+    top: 25px;
+    height: auto;
+    width: 70%;
+    overflow: visible;
+    background: #fff;
+    box-shadow: 10px 10px 35px -4px rgba(0, 0, 0, 0.21);
+    padding: 40px;
+	padding-top: 0px;
+left: 22%;
+}
+#divdecategoriasflotante{
+	position: absolute;
+    top: 25px;
+    height: auto;
+    width: 70%;
+    overflow: visible;
+    background: #fff;
+    box-shadow: 10px 10px 35px -4px rgba(0, 0, 0, 0.21);
+    padding: 40px;
+	padding-top: 0px;
+left: 22%;
+}
+#divdemodificarcategoria{
+	position: absolute;
+    top: 25px;
+    height: auto;
+    width: 70%;
+    overflow: visible;
+    background: #fff;
+    box-shadow: 10px 10px 35px -4px rgba(0, 0, 0, 0.21);
+    padding: 40px;
+	padding-top: 0px;
+left: 22%;
+	z-index: 6;
+}
+#divdemodificarcategoriapop {
+    position: absolute;
+    top: 0px;
+    height: auto;
+    width: 90%;
+    overflow: visible;
+    background: 
+#fff;
+box-shadow: 10px 10px 35px -4px
+    rgba(0, 0, 0, 0.21);
+    padding: 40px;
+        padding-top: 40px;
+    padding-top: 0px;
+    left: 0px;
+    z-index: 6;
+    padding-top: 30px;
+}
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+#divmodificabledeproductos{
+    position: absolute;
+    top: 25px;
+    height: auto;
+    width: 70%;
+    overflow: visible;
+    background: #fff;
+    box-shadow: 10px 10px 35px -4px rgba(0, 0, 0, 0.21);
+    padding: 40px;
+	padding-top: 0px;
+left: 22%;
+}
+#divdetamycolormain{
+    position: absolute;
+    top: 25px;
+    height: auto;
+    width: 70%;
+    overflow: visible;
+    background: #fff;
+    box-shadow: 10px 10px 35px -4px rgba(0, 0, 0, 0.21);
+    padding: 40px;
+	padding-top: 0px;
+left: 22%;
+}
+#divmaingaleriadeimagenes{
+    position: absolute;
+    top: 25px;
+    height: auto;
+    width: 70%;
+    overflow: visible;
+    background: #fff;
+    box-shadow: 10px 10px 35px -4px rgba(0, 0, 0, 0.21);
+    padding: 40px;
+	padding-top: 0px;
+left: 22%;
+}
+.cerrardiv {
+    font-family: titulos;
+    font-size: 40px;
+    color: #000;
+    text-align: right;
+    padding-right: 10px;
+	cursor: pointer;
+}
+.recuadrodeformacionformatoeg{
+	border: 2px solid #000;
+	width: 80%;
+	padding: 5px;
+	margin: 10px;
+	font-family: titulos;
+}
+.recuadrodeformacionformatoeggra100{
+	border: 2px solid #000;
+	width: 90%;
+	padding: 5px;
+	margin: 10px;
+	font-family: titulos;
+	height: 400px;
+}
+.colorsfielset{
+	    font-family: titulos;
+    font-size: 20px;
+    padding: 11px;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid;
+    margin: 40px;
+}
+.recuadrodecolorselect{
+	width: 15px;
+height: 15px;
+display: inline-block;
+}
+.divinlineblockdeformacion{
+	display: inline-block;
+	padding: 10px;
+}
+.formatodesubirdecarga{
+	background: rgba(0, 0, 0, 0.5);
+width: 100%;
+position: fixed;
+top: 0;
+height: 100vh;
+z-index: 99999;
+}
+.divcargadeformato{
+	width: 25%;
+height: 40vh;
+background: #fff;
+position: fixed;
+top: 30%;
+left: 40%;
+border-radius: 10px;
+}
+.gifloader{
+	width: 50%;
+position: relative;
+top: 35px;
+}
+.textosdeerrorcrearprod{
+	font-family: titulos;
+	display: inline-block;
+	font-size: 25px;
+	color: #000;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Select some files';
+  display: inline-block;
+  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+.ledgendfotnini{
+font-family: titulos;
+font-size: 30px;
+padding: 10px;
+}
+.tdtitlomodifpanel{
+	background: #121212;
+color: #fff;
+font-family: titulos;
+font-size: 22px;
+padding: 10px;
+}
+.espaciodeformatodediv{
+	padding-top: 25px;
+width: 90%;
+}
+.espaciotittle{
+	color: #000;
+	font-family: titulos;
+	font-size: 20px;
+}
+.textoformatotdini{
+	font-family: titulos;
+font-size: 17px;
+padding: 10px;
+border: 2px #000 solid;
+	
+	background: #fff;
+}
+.eleminartd{
+	background: #A70002;
+color: #fff;
+text-align: center;
+	font-family: titulos;
+font-size: 17px;
+padding: 10px;
+border: 2px #000 solid;
+	cursor: pointer;
+}
+.eleminartd:hover{
+	background: #600001;
+}
+.modificarproductos{
+	background: #9b9b9b;
+color: #fff;
+text-align: center;
+	font-family: titulos;
+font-size: 14px;
+padding: 10px;
+border: 2px #000 solid;
+	cursor: pointer;
+}
+.modificarproductos:hover{
+	background: #000;
+}
+.imgdemofidicarvistaprevio {
+    width: auto;
+    margin-left: 20%;
+    margin-right: 20%;
+    max-height: 300px;
+}
+.selectdedivmayan{
+	border: 2px solid
+#000;
+width: 83%;
+padding: 5px;
+margin: 10px;
+font-family: titulos;
+}
+.textosdescricpiconcrear{
+	font-family: titulos;
+	font-size: 20px;
+	color: #000;
+}
+.scrollformato{
+	position: relative;
+	top: -100px;
+}
+.owl-prev{
+	color: #000;
+font-size: 95pt;
+left: 5%;
+position: absolute;
+width: 30rem;
+height: 20rem;
+}
+.owl-prev:hover{
+	background: rgba(0,0,0,1.00);
+	color: #ff2f3d;
+}
+
+.owl-nav {
+
+    display: none;
+    top: -80%;
+    position: relative;
+    margin-top: 0px;
+
+}
+
+.owl-next{
+	color: #000;
+font-size: 95pt;
+right: 3%;
+position: absolute;
+width: 30rem;
+height: 20rem;
+}
+.owl-next:hover{
+	background: rgba(0,0,0,1.00);
+	color: #ff2f3d;
+}
+.cajadetextodescripcionarticulo{
+	width: 100%;
+border: none;
+height: 280px;
+font-size: 18px;
+padding-bottom: 15px;
+color: #2B2B2B;
+padding-top: 5px;
+	resize: none;
+	font-family: 'Arial Narrow', arial;
+}
+
+.nombredecategoriatitulo {
+    font-family: impact;
+    font-size: 40pt;
+    color: #ff2f3d;
+    padding-bottom: 40px;
+}
+.eliminar{
+    background: #ff2f3d;
+    margin-top: 30px;
+    color: #fff;
+    font-size: 18pt;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.classerrocontacto {
+    background: rgb(193, 2, 48);
+    color: rgb(255, 255, 255);
+    display: none;
+    font-size: 18pt;
+    padding: 5px 100px;
+    margin-top: 10px;
+}
+
+.mercadolibremaintienda {
+    position: fixed;
+    bottom: 0px;
+    right: -40px;
+    width: 275px;
+    z-index: 9;
+}
+.divoficedepot {
+    position: fixed;
+    bottom: 80px;
+    right: -40px;
+    width: 275px;
+    z-index: 9;
+}
+.titulosdevisitamercadolibre {
+    background: #ff2f3d;
+    color: #fff;
+    font-size: 15pt;
+    margin-top: 2px;
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    top: -20px;
+    left: 7px;
+}
+.logomercadlibre {
+    width: 25%;
+    display: inline-block;
+    border-radius: 215px;
+    border: solid 5px #ff2f3d;
+    background: #ff2f3d;
+}
+.parascrolldiv{
+	position: absolute;
+	top: -100px;
+}
+
+.owl-nav2{
+	position: absolute;
+top: 0%;
+left: 0;
+right: 0;
+width: 80%;
+	z-index: 10
+}
+.owl-prev2{
+	color:rgba(0,0,0,1.00)  !important;
+font-size: 80px !important;
+font-family: pt-sans-narrow, sans-serif !important;
+position: absolute !important;
+left: -13% !important;
+width: 40%;
+height: 290px ;
+}
+.owl-next2{
+	color: rgba(0,0,0,1.00)  !important;
+	font-size: 80px !important;
+	font-family: pt-sans-narrow, sans-serif !important;
+	position: absolute !important;
+right: -13% !important;
+width: 40%;
+height: 290px ;
+	
+}
+
+.divmedidasmain{
+	width: 100%;
+	text-align: center;
+}
+
+.ppresentacionarticulomain {
+    font-family: impact;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #ff2f3d;
+    font-size: 5rem;
+    line-height: 35pt;
+    padding-bottom: 15px;
+}
+
+
+
+.divrecudaropresentacionmain {
+    width: 30%;
+    padding: 1%;
+    display: inline-block;
+    background: gray;
+    color: #fff;
+    font-size: 10pt;
+	margin: 1%;
+	position: relative;
+}
+
+.divrecudaropresentacionmain p {
+    margin: 0px 0;
+    font-size: 12pt;
+    font-weight: normal;
+}
+
+.divproductosduf{
+	padding-top: 0px;
+	width: 100%;
+	background: #fff;
+}
+.subcategoriasubtitulo {
+    font-size: 30pt;
+    color: #000;
+    padding-bottom: 40px;
+    font-family: impact;
+}
+.titulosrecomendacionarticulo {
+    font-family: impact;
+    font-size: 30pt;
+    color: #ff2f3d;
+    padding-bottom: 40px;
+    text-align: center;
+    line-height: 30pt;
+}
+
+.recuadrodecolor {
+    background: #ffffff;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 5px solid gray;
+    border-radius: 40px;
+    top: -50%;
+    left: 5%;
+}
+
+
+
+
+.icon-barslide {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+	right: 0px;
+}
+.icon-barslide a {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+.icon-barslide a:hover {
+  background-color: #ff2f3d;
+}
+.facebook {
+  background: #3A5795;
+  color: white;
+	display: none;
+}
+.fmesseger {
+  background: #55ACEE;
+  color: white;
+}
+.intagram {
+background:#405de6;
+  color: white;
+	display: none;
+}
+.whatsapp {
+  background: #25D366;
+  color: white;
+}
+.twitter{
+	background:#00acee;
+	display: none;
+}
+.linkedin{
+	background:#0e76a8;
+	display: none;
+}
+.telefono{
+	background:#FF8000;
+}
+.imgbarlog{
+	width:18px;
+}
+
+
+.sidemovil{
+	display: none;
+}
+.sidebarparadesk{
+	display: block;
+}
+
+.subcategroias {
+    width: 90%;
+    margin-left: 3%;
+    font-size: 15pt;
+    padding-top: 20px;
+    line-height: 20pt;
+}
+
+.subsubcategroias {
+    width: 90%;
+    margin-left: 7%;
+    font-size: 12pt;
+    padding-top: 5px;
+    line-height: 20pt;
+}
+
+.imgdaplogotitulo {
+    width: 80px;
+    position: absolute;
+    top: -30px;
+    left: 75%;
+}
+
+
+.imgdaplogotituloprincipal {
+    width: 120px;
+    top: -45px;
+    position: absolute;
+    left: 80%;
+}
+
+.divparalogodappricipal{
+    position: relative;
+    width: 40%;
+    text-align: center;
+    margin-left: 25%;
+}
+
+
+
+.divparalogodap{
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+.espaciotitulosdafproductos{
+	padding-bottom: 70px;
+}
+.imgdelogosprincialtapini{
+	width: 100%;
+}
+
+
+.imgfilrtroblanco{
+	width: 100%;
+	filter: contrast(40%) sepia(1) hue-rotate(129.8deg) saturate(5000%) invert(1);
+}
+
+.divbalncoderedesocieles {
+
+    display: inline-block;
+    background: #fff;
+    border-radius: 80px;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    margin: 5px;
+
+}
+
+.logomark{
+    width: 85%;
+	transition: all 0.3s ease;
+
+}
+
+.logomarkscroll{
+    width: 50%;
+	transition: all 0.3s ease;
+
+}
+
+.maindivmenu {
+    background: rgb(0,0,0,0);
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 90px;
+    z-index: 999;
+	transition: all 0.3s ease;
+
+}
+
+.maindivmenuscroll {
+    background: #ff2f3d;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 90px;
+    z-index: 999;
+	transition: all 0.3s ease;
+
+}
+
+.redesdesk{
+	text-align:right; 
+	padding-right: 55px;
+	display: block;
+	width: 100%;
+	margin-top: 50px;
+	transition: all 0.3s ease;
+
+}
+
+.redesdeskscroll {
+
+    text-align: right;
+    padding-right: 55px;
+    display: block;
+    margin-top: 20px;
+    width: 100%;
+	transition: all 0.3s ease;
+
+
+}
+
+.redesmoviles{
+	display: none;
+}
+
+.divdeproductosmaincatefgorias {
+    height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.imgservicsatribu{
+	object-fit: cover;
+}
+.imgblanco{
+    filter: invert(1);
+}

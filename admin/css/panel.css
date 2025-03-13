@@ -1,0 +1,76 @@
+body{
+    background: linear-gradient(90deg, rgba(158,26,37,1) 49%, rgba(105,35,33,1) 100%);
+}
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+
+.btn-circle {
+    width: 60px;
+    height: 60px;
+    padding: 6px 0px;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.42857;
+    position: fixed;
+}
+
+.float-marg{
+    margin-bottom: 70px;
+    margin-right: 70px;
+}
+
+.bg-light {
+    background: transparent !important;
+}
+
+.input-group-text{
+    background-color: white !important;
+}
+
+#exampleModal .modal-dialog{
+    max-width: 85%;
+}
+
+#exampleModal3 .modal-dialog{
+    max-width: 75%;
+}
+.modal-header{
+    border-bottom: none !important;
+}
+
+.w-b{
+    width: 100%;
+}
+
+.modal-footer{
+    border-top: none !important;
+}
+
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 0rem;
+    pointer-events: none;
+    margin: 0 auto;
+}
+
+.input-group-text{
+background: #e9ecef !important;
+}
+
+.card-title{
+    font-size: 14px;
+}
+
+.card-text{
+    font-size: 12px;
+    margin-top: 0 !important;
+    margin-bottom: 0rem !important;
+}
